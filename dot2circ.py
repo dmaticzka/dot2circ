@@ -1,5 +1,9 @@
 #!/usr/bin/env python
 
+import argparse
+from subprocess import call
+from subprocess import check_output
+
 DESCRIPTION = """
 dot2circ - convert ViennaRNA dotplots to circular base-pairing diagrams
 
@@ -18,14 +22,9 @@ folding parameters set to W150 L100.
 color annotation set to my current test sequence.
 """
 
-RNAPLFOLD_PARAMS="-W 150 -L 100 -T 25"
-PERLBIN="/usr/bin/perl"
-CIRCOSBIN="/home/maticzkd/src/circos-0.67-7/bin/circos"
-
-import argparse
-from subprocess import call
-from subprocess import check_output
-#call(["ls", "-l"])
+RNAPLFOLD_PARAMS = "-W 150 -L 100 -T 25"
+PERLBIN = ""
+CIRCOSBIN = "circos"
 
 # parse command line arguments
 parser = argparse.ArgumentParser(description=DESCRIPTION, epilog=EPILOG)
